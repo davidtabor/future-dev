@@ -1,0 +1,40 @@
+@media (prefers-color-scheme: dark) {
+    .sunset {
+        background: linear-gradient(#6e3b5a, #533b55 33%, #373a4a 100%);
+    }
+
+    .sunset .sun.light-sun {
+        background: linear-gradient(#f8e5fb, #ead5e7 15%, #f3c9d2 50%, #f3b8cc 85%, #eda3c8 100%);
+    }
+
+    .sunset .sun.red-sun {
+        background: linear-gradient(#dc3e3f, #dd3d45 100%);
+    }
+
+    .sun::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: inherit;
+        border-radius: inherit;
+        opacity: 1;
+        animation: wibble 5s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes wibble {
+        from {
+            filter: blur(5px);
+            transform: skew(-0.06turn, 18deg);
+        }
+
+        to {
+            filter: blur(10px);
+            transform: skew(0.06turn, -18deg);
+        }
+    }
+}

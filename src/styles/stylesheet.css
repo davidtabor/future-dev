@@ -5,6 +5,7 @@
   --hc: #273;
 }
 
+
 @media (prefers-color-scheme: dark) {
   * {
     --tc: #fff;
@@ -56,7 +57,7 @@ br {
 
 /* navigation */
 section,
-section:target ~ section:last-of-type {
+section:target~section:last-of-type {
   display: none;
 }
 
@@ -64,6 +65,7 @@ section:target,
 section:last-of-type {
   display: inherit;
 }
+
 /* end navigation */
 
 header {
@@ -72,7 +74,7 @@ header {
   align-items: center;
 }
 
-header > a {
+header>a {
   font-size: 1.7em;
   font-weight: 700;
 }
