@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
 const gulp = require("gulp");
-const postcss = require("gulp-postcss");
+// const postcss = require("gulp-postcss");
 const htmlmin = require("gulp-htmlmin");
 const cleanCSS = require("gulp-clean-css");
 const inlinesource = require("gulp-inline-source");
-const cssnano = require("cssnano");
+// const cssnano = require("cssnano");
 const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 const path = require("path");
-const del = require("del");
+// const del = require("del");
 
 const html = () =>
   gulp
@@ -25,16 +25,16 @@ const html = () =>
 
 const scss = () =>
   gulp
-    .src("src/styles/*.scss")
+    .src("src/styles/scss/**/*.scss")
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
-    .pipe(postcss(cssnano))
+    // .pipe(postcss(cssnano))
     .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest("dist/styles"));
 
 const css = () =>
   gulp
-    .src("src/styles/*.css")
+    .src("src/styles/**.css")
     .pipe(
       cleanCSS({ debug: true, level: 2 }, (details) => {
         console.log(`${details.name}: ${details.stats.originalSize}`);
