@@ -1,0 +1,96 @@
+.sunset {
+  background: transparent;
+  width: 100%;
+  height: 160px;
+  display: flex;
+  position: relative;
+}
+
+.sun {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --animation-time: 2s;
+  }
+
+  .sunset {
+    background: linear-gradient(#6e3b5a, #533b55 33%, #373a4a 100%);
+  }
+
+  .sunset .sun.light-sun {
+    background: linear-gradient(#f8e5fb, #ead5e7 15%, #f3c9d2 50%, #f3b8cc 85%, #eda3c8 100%);
+  }
+
+  .sunset .sun.red-sun {
+    background: linear-gradient(#dc3e3f, #dd3d45 100%);
+  }
+
+  .sun {
+    height: 20px;
+    width: 20px;
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    top: 50%;
+    left: 70%;
+  }
+
+  .sun:last-of-type {
+    left: 75%;
+    top: 75%;
+  }
+
+  .sun::before {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+    opacity: 1;
+    animation: wibble var(--animation-time) alternate;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes wibble {
+    from {
+      filter: blur(3px);
+      transform: skew(-0.03turn, 5deg);
+    }
+    to {
+      filter: blur(4px);
+      transform: skew(0.03turn, -5deg);
+    }
+  }
+}
+body {
+  max-width: 100%;
+  padding: 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+header .container > a {
+  font-size: 1.7em;
+  font-weight: 700;
+}
+
+nav a {
+  margin-left: 0.75em;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 0 0.7em;
+}
+/*# sourceMappingURL=styles.css.map */
